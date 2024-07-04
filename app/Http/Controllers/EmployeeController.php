@@ -36,7 +36,7 @@ class EmployeeController extends Controller
             $fileName = time() . '.' . $file->getClientOriginalExtension(); 
             $filePath = 'employee_photos/' . $fileName; 
  
-            Storage::disk('employee_photos/')->put($fileName, file_get_contents($file)); 
+            Storage::disk('employee_photos')->put($fileName, file_get_contents($file)); 
             $employee->photo = $filePath; 
         } 
 
